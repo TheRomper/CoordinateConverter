@@ -550,6 +550,7 @@ void gpctest::init() {
 	cout << endl << endl;
 
 }
+
 void gpctest::read() {
 	ifstream initFile;
 	initFile.open(inputFilename.c_str()); //opens file
@@ -751,13 +752,13 @@ void gpctest::roundGridpoint() {
 			for (it = initialNum.begin(); it != initialNum.end(); it++) //iterates through read in temps
 					{
 
-				double yTemp = abs(it->y - y1);
-				double xTemp = abs(it->x - x1);
+				double yTemp = abs((it -> y) - y1);
+				double xTemp = abs(it -> x - x1);
 
 				//if read-in x,y coordinates are <1 of desired coordinate
 				if (xTemp < maxDiff)
 					if (yTemp < maxDiff) {
-						totalTemp += it->temp;
+						totalTemp += it-> temp;
 						count++;
 					}
 			}
